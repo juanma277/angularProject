@@ -1,18 +1,44 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { routes } from './app.routes';
+import { ImageService } from './services/image.service';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { NavbarComponent } from './navbar.component';
+import { GalleryComponent } from './gallery/gallery.component';
+import { ImageListComponent } from './gallery/image-list/image-list.component';
+import { ImageComponent } from './gallery/image-list/image.component';
+import { ImageDetailComponent } from './gallery/image-detail/image-detail.component';
+import { ContactComponent } from './gallery/contact/contact.component';
+import { LoginComponent } from './gallery/login/login.component';
+import { AboutComponent } from './gallery/about/about.component';
+import { AdminComponent } from './admin/admin.component';
+import { AdminImagesListComponent } from './admin/admin-images-list/admin-images-list.component';
+import { DashboardComponent } from './admin/dashboard.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavbarComponent,
+    GalleryComponent,
+    ImageListComponent,
+    ImageComponent,
+    ImageDetailComponent,
+    ContactComponent,
+    LoginComponent,
+    AboutComponent,
+    AdminComponent,
+    AdminImagesListComponent,
+    DashboardComponent
   ],
   imports: [
-    BrowserModule
+    routes,
+    BrowserModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [ImageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
