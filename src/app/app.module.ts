@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { routes } from './app.routes';
 import { ImageService } from './services/image.service';
 import { HttpModule } from '@angular/http';
+import { FormsModule} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar.component';
@@ -16,6 +17,8 @@ import { AboutComponent } from './gallery/about/about.component';
 import { AdminComponent } from './admin/admin.component';
 import { AdminImagesListComponent } from './admin/admin-images-list/admin-images-list.component';
 import { DashboardComponent } from './admin/dashboard.component';
+import { AdminImageCreateComponent } from './admin-image-create/admin-image-create.component';
+import { AdminImageEditComponent } from './admin/admin-image-edit/admin-image-edit.component';
 
 
 @NgModule({
@@ -31,11 +34,14 @@ import { DashboardComponent } from './admin/dashboard.component';
     AboutComponent,
     AdminComponent,
     AdminImagesListComponent,
-    DashboardComponent
+    DashboardComponent,
+    AdminImageCreateComponent,
+    AdminImageEditComponent
   ],
   imports: [
     routes,
     BrowserModule,
+    FormsModule,
     HttpModule
   ],
   providers: [ImageService],
